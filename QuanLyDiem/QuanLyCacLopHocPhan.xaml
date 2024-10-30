@@ -1,0 +1,41 @@
+﻿<Window x:Class="QuanLyDiem.QuanLyCacLopHocPhan"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:QuanLyDiem"
+        mc:Ignorable="d"
+        Title="QuanLyCacLopHocPhan" Height="550" Width="800" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded" >
+    <Grid Background="Beige">
+        <Border BorderBrush="Green" BorderThickness="2" HorizontalAlignment="Center" Height="458" Margin="0,51,0,0" VerticalAlignment="Top" Width="780"></Border>
+        <Label Content="Thông tin các lớp học phần" HorizontalAlignment="Center" Height="48" VerticalAlignment="Top" Width="339" Margin="0,3,0,0" FontSize="24" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontWeight="Bold" Foreground="Blue"/>
+        <Button Content="Thêm mới" Background="Blue" HorizontalAlignment="Left" Height="29" Margin="608,62,0,0" VerticalAlignment="Top" Width="153" Click="Button_Click" />
+        <Button Content="Sửa" Background="Green" HorizontalAlignment="Left" Height="30" Margin="608,96,0,0" VerticalAlignment="Top" Width="153" Click="Button_Click_1"/>
+        <Button Content="Xóa" Background="Red" HorizontalAlignment="Left" Height="29" Margin="608,131,0,0" VerticalAlignment="Top" Width="153" Click="Button_Click_2"/>
+        <DataGrid x:Name="dtgLop" CanUserAddRows="False" AutoGenerateColumns="False" HorizontalAlignment="Left" Height="247" Margin="19,228,0,0" VerticalAlignment="Top" Width="751" RenderTransformOrigin="0.501,0.612" SelectionChanged="dtgLop_SelectionChanged">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Mã lớp" Binding="{Binding MaLop}"/>
+                <DataGridTextColumn Header="Tên lớp" Binding="{Binding TenLop}"/>
+                <DataGridTextColumn Header="Giáo viên" Binding="{Binding HoTen}"/>
+                <DataGridTextColumn Header="Khoa" Binding="{Binding MaKhoa}"/>
+                <DataGridTextColumn Header="Tên học phần" Binding="{Binding MaMh}"/>
+                <DataGridTextColumn Header="Ngày bắt đầu" Binding="{Binding NgayBatDauLopHoc,StringFormat=dd/MM/yyyy}"/>
+                <DataGridTextColumn Header="Ngày kết thúc" Width="*" Binding="{Binding NgayKetThucLopHoc,StringFormat=dd/MM/yyyy}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Label Content="Mã lớp:" HorizontalAlignment="Left" Margin="18,67,0,0" VerticalAlignment="Top"/>
+        <Label Content="Tên lớp:" HorizontalAlignment="Left" Margin="18,97,0,0" VerticalAlignment="Top"/>
+        <Label Content="Giáo viên:" HorizontalAlignment="Left" Margin="18,127,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtMa" HorizontalAlignment="Left" VerticalContentAlignment="Center" Margin="103,68,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="214" Height="23"/>
+        <TextBox x:Name="txtTen" HorizontalAlignment="Left" VerticalContentAlignment="Center" Margin="103,98,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="214" Height="23"/>
+        <ComboBox x:Name="cboGiaoVien" SelectedIndex="0" HorizontalAlignment="Left" VerticalContentAlignment="Center" Margin="103,127,0,0"  VerticalAlignment="Top" Width="178" Height="23"/>
+        <Label Content="Khoa:" HorizontalAlignment="Left" Margin="19,157,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="cboKhoa" HorizontalAlignment="Left" VerticalContentAlignment="Center" Margin="103,157,0,0" VerticalAlignment="Top" Width="178" Height="23"/>
+        <Label Content="Môn học:" HorizontalAlignment="Left" Margin="19,187,0,0" VerticalAlignment="Top"/>
+        <ComboBox Name="cboMonHoc" SelectedIndex="0" HorizontalAlignment="Left" Height="24" Margin="103,187,0,0" VerticalAlignment="Top" Width="178"></ComboBox>
+        <Label Content="Ngày bắt đầu:" HorizontalAlignment="Left" Margin="319,157,0,0" VerticalAlignment="Top"/>
+        <Label Content="Ngày kết thúc:" HorizontalAlignment="Left" Margin="319,186,0,0" VerticalAlignment="Top"/>
+        <DatePicker Name="dtpNgayBD" Margin="412,156,226,0" VerticalAlignment="Top"></DatePicker>
+        <DatePicker Name="dtpNgayKT" Margin="412,186,226,0" VerticalAlignment="Top"/>
+    </Grid>
+</Window>

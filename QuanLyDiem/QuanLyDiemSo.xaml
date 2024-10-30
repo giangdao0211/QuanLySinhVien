@@ -1,0 +1,50 @@
+﻿<Window x:Class="QuanLyDiem.QuanLyDiemSo"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:QuanLyDiem"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Title="Quản lý điểm" Height="560" Width="1000" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
+    <Grid Background="Beige" Margin="0,0,-12,-16">
+        <Border BorderBrush="Green" BorderThickness="2" HorizontalAlignment="Left" Height="446" Margin="18,75,0,0" VerticalAlignment="Top" Width="972"/>
+
+        <Label Content="Thông tin điểm số" HorizontalAlignment="Center" Foreground="Blue" Margin="0,20,0,0" VerticalAlignment="Top" FontSize="24" FontWeight="Bold"/>
+        <Label Content="Mã môn học:" HorizontalAlignment="Left" Margin="79,129,0,0" VerticalAlignment="Top"/>
+        <Label Content="Mã sinh viên:" HorizontalAlignment="Left" Margin="79,99,0,0" VerticalAlignment="Top"/>
+        <Label Content="Điểm TX1:" HorizontalAlignment="Left" Margin="79,159,0,0" VerticalAlignment="Top"/>
+        <Label Content="Điểm TX2:" HorizontalAlignment="Left" Margin="79,189,0,0" VerticalAlignment="Top"/>
+        <Label Content="Điểm thi:" HorizontalAlignment="Left" Margin="79,219,0,0" VerticalAlignment="Top"/>
+        <Label Content="Điểm tổng kết (Số):" HorizontalAlignment="Left" Margin="79,249,0,0" VerticalAlignment="Top"/>
+        <TextBox  x:Name="txtMaSV" materialDesign:HintAssist.Hint=" Nhập mã sv muốn tìm" HorizontalAlignment="Left" Margin="214,98,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="207"/>
+        <ComboBox SelectedIndex="0" x:Name="cboMH" HorizontalAlignment="Left" Margin="214,128,0,0" VerticalAlignment="Top" Width="207"/>
+        <TextBox x:Name="txtTX1" HorizontalAlignment="Left" Margin="214,158,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="71"/>
+        <TextBox x:Name="txtTX2" HorizontalAlignment="Left" Margin="214,188,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="71"/>
+        <TextBox x:Name="txtDiemThi" HorizontalAlignment="Left" Margin="214,218,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="71"/>
+        <TextBox x:Name="txtTKSo" HorizontalAlignment="Left" Margin="214,248,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="89"/>
+        <Button ToolTip="Lọc" HorizontalAlignment="Left" Margin="426,95,0,0" VerticalAlignment="Top" Height="30"  Width="30" Click="Button_Click_3">
+            <Button.Background>
+                <ImageBrush ImageSource="Resources\filter.png"/>
+            </Button.Background>
+        </Button>
+        <DataGrid x:Name="dtgDiem" IsReadOnly="True" AutoGenerateColumns="False" HorizontalAlignment="Center" Height="180" Margin="0,306,0,0" VerticalAlignment="Top" Width="939" SelectionChanged="dtgDiem_SelectionChanged" >
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Mã SV" Binding="{Binding MaSv}"/>
+                <DataGridTextColumn Header="Tên SV" Binding="{Binding TenSv}"/>
+                <DataGridTextColumn Header="Mã môn học" Binding="{Binding MaMh}"/>
+                <DataGridTextColumn Header="Tên môn học" Binding="{Binding TenMh}"/>
+                <DataGridTextColumn Header="Điểm TX1" Binding="{Binding DiemTx1}"/>
+                <DataGridTextColumn Header="Điểm TX2" Binding="{Binding DiemTx2}"/>
+                <DataGridTextColumn Header="Điểm thi" Binding="{Binding DiemThi}"/>
+                <DataGridTextColumn Header="Điểm TK (Số)" Binding="{Binding DiemTkso}"/>
+                <DataGridTextColumn Width="*" Header="Điểm TK (Chữ)" Binding="{Binding DiemTkchu}"/>
+
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Content="Thêm mới" Background="Blue" HorizontalAlignment="Left" Height="35" Margin="700,123,0,0" VerticalAlignment="Top" Width="182" Click="Button_Click" />
+        <Button Content="Sửa" Background="Green" HorizontalAlignment="Left" Height="34" Margin="700,163,0,0" VerticalAlignment="Top" Width="182" Click="Button_Click_1"/>
+        <Button Content="Xóa" Background="Red" HorizontalAlignment="Left" Height="35" Margin="700,203,0,0" VerticalAlignment="Top" Width="182" Click="Button_Click_2"/>
+
+    </Grid>
+</Window>

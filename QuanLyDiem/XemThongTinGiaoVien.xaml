@@ -1,0 +1,33 @@
+﻿<Window x:Class="QuanLyDiem.XemThongTinGiaoVien"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:QuanLyDiem"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Title="XemThongTinGiaoVien" Height="428" Width="800" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
+    <Grid Background="Beige">
+        <Border BorderBrush="Green" BorderThickness="2" HorizontalAlignment="Center" Height="343" Margin="0,51,0,0" VerticalAlignment="Top" Width="780"/>
+        <Label Content="Thông tin giáo viên" HorizontalAlignment="Center" Height="48" VerticalAlignment="Top" Width="230" Margin="0,3,0,0" FontSize="24" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontWeight="Bold" Foreground="Blue"/>
+        <DataGrid x:Name="dtgGiaoVien" IsReadOnly="True" CanUserAddRows="False" AutoGenerateColumns="False" HorizontalAlignment="Left" Height="224" Margin="21,156,0,0" VerticalAlignment="Top" Width="748" RenderTransformOrigin="0.501,0.612">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Mã giáo viên" Binding="{Binding MaGv}"/>
+                <DataGridTextColumn Header="Họ tên" Binding="{Binding HoTen}"/>
+                <DataGridTextColumn Header="Ngày sinh" Binding="{Binding NgaySinh}"/>
+                <DataGridTextColumn Header="Quê quán" Binding="{Binding QueQuan}"/>
+                <DataGridTextColumn Header="SDT" Binding="{Binding SoDt}"/>
+                <DataGridTextColumn Header="Trình độ học vấn" Width="*" Binding="{Binding TrinhDoHocVan}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Label Content="Mã giáo viên:" HorizontalAlignment="Left" Margin="35,83,0,0" VerticalAlignment="Top"/>
+        <TextBox  x:Name="txtMaGV" VerticalContentAlignment="Center" materialDesign:HintAssist.Hint=" Nhập mã giáo viên muốn tìm" HorizontalAlignment="Left" Margin="119,78,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="275" Height="32"/>
+        <Button ToolTip="Tìm kiếm" HorizontalAlignment="Left" Margin="395,78,0,0" VerticalAlignment="Top" Height="33"  Width="37" Click="Button_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="Resources\search.png"/>
+            </Button.Background>
+        </Button>
+        <TextBox Style="{StaticResource MaterialDesignComboBoxEditableTextBox}" Foreground="Red" Name="tbThongBao" HorizontalAlignment="Left" Height="28" Margin="119,115,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="209"/>
+
+    </Grid>
+</Window>

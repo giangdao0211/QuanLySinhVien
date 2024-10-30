@@ -1,0 +1,38 @@
+﻿<Window x:Class="QuanLyDiem.QuanLyGiaoVien"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:QuanLyDiem"
+        mc:Ignorable="d"
+        Title="QuanLyGiaoVien" Height="550" Width="800" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
+    <Grid Background="Beige">
+        <Border BorderBrush="Green" BorderThickness="2" HorizontalAlignment="Center" Height="458" Margin="0,51,0,0" VerticalAlignment="Top" Width="780"/>
+        <Label Content="Thông tin giáo viên" HorizontalAlignment="Center" Height="48" VerticalAlignment="Top" Width="230" Margin="0,3,0,0" FontSize="24" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontWeight="Bold" Foreground="Blue"/>
+        <Button Content="Thêm mới" Background="Blue" HorizontalAlignment="Left" Height="35" Margin="570,70,0,0" VerticalAlignment="Top" Width="182" Click="Button_Click"  />
+        <Button Content="Sửa" Background="Green" HorizontalAlignment="Left" Height="34" Margin="570,110,0,0" VerticalAlignment="Top" Width="182" Click="Button_Click_2" />
+        <Button Content="Xóa" Background="Red" HorizontalAlignment="Left" Height="35" Margin="570,150,0,0" VerticalAlignment="Top" Width="182" Click="Button_Click_1" />
+        <DataGrid x:Name="dtgGiaoVien" CanUserAddRows="False" AutoGenerateColumns="False" HorizontalAlignment="Left" Height="244" Margin="19,254,0,0" VerticalAlignment="Top" Width="748" RenderTransformOrigin="0.501,0.612" SelectionChanged="dtgGiaoVien_SelectionChanged" >
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Mã giáo viên" Binding="{Binding MaGv}"/>
+                <DataGridTextColumn Header="Họ tên" Binding="{Binding HoTen}"/>
+                <DataGridTextColumn Header="Ngày sinh" Binding="{Binding NgaySinh,StringFormat=dd/MM/yyyy}"/>
+                <DataGridTextColumn Header="Quê quán" Binding="{Binding QueQuan}"/>
+                <DataGridTextColumn Header="SDT" Binding="{Binding SoDt}"/>
+                <DataGridTextColumn Header="Trình độ học vấn" Width="*" Binding="{Binding TrinhDoHocVan}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Label Content="Mã giáo viên:" HorizontalAlignment="Left" Margin="18,67,0,0" VerticalAlignment="Top"/>
+        <Label Content="Họ tên:" HorizontalAlignment="Left" Margin="18,97,0,0" VerticalAlignment="Top"/>
+        <Label Content="Ngày sinh:" HorizontalAlignment="Left" Margin="18,127,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtMa" HorizontalAlignment="Left" VerticalContentAlignment="Center" Margin="132,68,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="111" Height="23"/>
+        <TextBox x:Name="txtTen" HorizontalAlignment="Left" VerticalContentAlignment="Center" Margin="132,98,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="226" Height="23"/>
+        <TextBox x:Name="txtQueQuan" HorizontalAlignment="Left" VerticalContentAlignment="Center" Margin="132,156,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="146" Height="23"/>
+        <Label Content="Quê quán:" HorizontalAlignment="Left" Margin="19,155,0,0" VerticalAlignment="Top"/>
+        <Label Content="Số điện thoại:" HorizontalAlignment="Left" Margin="19,185,0,0" VerticalAlignment="Top"/>
+        <Label Content="Trình độ học vấn:" HorizontalAlignment="Left" Margin="19,215,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtSDT" HorizontalAlignment="Left" VerticalContentAlignment="Center" Margin="132,186,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="146" Height="23"/>
+        <TextBox x:Name="txtTrinhDoHocVan" HorizontalAlignment="Left" VerticalContentAlignment="Center" Margin="132,216,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="146" Height="23"/>
+        <DatePicker Name="dtpNgaySinh" HorizontalAlignment="Left" Margin="132,128,0,0" VerticalAlignment="Top" Width="113"/>
+    </Grid>
+</Window>

@@ -1,0 +1,40 @@
+﻿<Window x:Class="QuanLyDiem.SuaSinhVien"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:QuanLyDiem"
+        mc:Ignorable="d"
+        Title="SuaSinhVien" Height="550" Width="1100" Loaded="Window_Loaded">
+    <Grid Background="Beige">
+        <Label FontWeight="Bold" Padding="65,0,0,0"  FontSize="22" Content="SỬA THÔNG TIN SINH VIÊN"  HorizontalAlignment="Center" Margin="0,35,0,0" VerticalAlignment="Top" Width="410"/>
+        <Label FontSize="14" Content="Mã sinh viên: " HorizontalAlignment="Left" Margin="10,81,0,0" VerticalAlignment="Top" Width="182"/>
+        <TextBox IsReadOnly="True" Name="txtMa" HorizontalAlignment="Left" Margin="124,85,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="186"/>
+        <Label FontSize="14" Content="Tên sinh viên: " HorizontalAlignment="Left" Margin="10,140,0,0" VerticalAlignment="Top"/>
+        <TextBox Name="txtTen" FontSize="14" HorizontalAlignment="Left" Margin="124,144,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="186"/>
+        <Label FontSize="14" Content="Ngày sinh: " HorizontalAlignment="Left" Margin="10,191,0,0" VerticalAlignment="Top" Width="109"/>
+
+        <Label FontSize="14" Content="Giới tính: " HorizontalAlignment="Left" Margin="10,247,0,0" VerticalAlignment="Top" Width="96"/>
+        <RadioButton Name="rbNam" FontSize="14" Content="Nam" HorizontalAlignment="Left" Margin="124,253,0,0" VerticalAlignment="Top"/>
+        <RadioButton Name="rbNu" FontSize="14" Content="Nữ" HorizontalAlignment="Left" Margin="217,253,0,0" VerticalAlignment="Top"/>
+        <Label FontSize="14" Content="Địa chỉ: " HorizontalAlignment="Left" Margin="10,305,0,0" VerticalAlignment="Top"/>
+        <TextBox Name="txtDiaChi" FontSize="14" HorizontalAlignment="Left" Margin="124,309,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="186"/>
+        <Label FontSize="14" Content="Số điện thoại: " HorizontalAlignment="Left" Margin="10,363,0,0" VerticalAlignment="Top" Width="96"/>
+        <TextBox Name="txtSDT" FontSize="14" HorizontalAlignment="Left" Margin="124,367,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="186"/>
+        <Label FontSize="14" Content="Email: " HorizontalAlignment="Left" Margin="10,419,0,0" VerticalAlignment="Top" Width="96"/>
+        <TextBox Name="txtEmail" FontSize="14" HorizontalAlignment="Left" Margin="124,423,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="186"/>
+        <DatePicker Name="txtNgay" HorizontalAlignment="Left" Margin="124,193,0,0" VerticalAlignment="Top" Width="186"/>
+        <DataGrid Name="dgSV" AutoGenerateColumns="False" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="330,81,10,258" CanUserAddRows="True" FontSize="14" SelectedCellsChanged="dgSV_SelectedCellsChanged">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Mã sinh viên" Binding="{Binding maSV, Mode=OneWay}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Tên sinh viên" Binding="{Binding tenSV,Mode=OneWay}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Ngày sinh" Binding="{Binding ngaySinh, Mode=OneWay}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Giới tính" Binding="{Binding gioiTinh,Mode=OneWay}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Địa chỉ" Binding="{Binding diaChi, Mode=OneWay}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Số điện thoại" Binding="{Binding soDT, Mode=OneWay}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Email" Binding="{Binding email, Mode=OneWay}"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button FontSize="14" Background="Blue" FontWeight="Bold" FontStyle="Italic" Content="Cập nhật" HorizontalAlignment="Left" Margin="124,464,0,0" VerticalAlignment="Top" Width="93" Height="31" Click="Button_Click"/>
+    </Grid>
+</Window>

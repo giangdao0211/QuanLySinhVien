@@ -1,0 +1,27 @@
+﻿<Window x:Class="QuanLyDiem.QuanLySinhVien"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:QuanLyDiem"
+        mc:Ignorable="d"
+        Title="QuanLySinhVien" Height="450" Width="800" Loaded="Window_Loaded" WindowStartupLocation="CenterScreen">
+    <Grid Background="Beige">
+        <Label FontWeight="Bold" Padding="40,0,0,0"  FontSize="22" Content="QUẢN LÝ THÔNG TIN SINH VIÊN"  HorizontalAlignment="Center" Margin="0,35,0,0" VerticalAlignment="Top" Width="410"/>
+        <DataGrid Name="dgSV" Margin="0,126,0,126" AutoGenerateColumns="False" CanUserAddRows="True" FontSize="14" >
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Mã sinh viên" Binding="{Binding maSV, Mode=OneWay}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Tên sinh viên" Binding="{Binding tenSV,Mode=OneWay}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Ngày sinh" Binding="{Binding ngaySinh,StringFormat=dd/MM/yyyy, Mode=OneWay}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Giới tính" Binding="{Binding gioiTinh,Mode=OneWay}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Địa chỉ" Binding="{Binding diaChi, Mode=OneWay}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Số điện thoại" Binding="{Binding soDT, Mode=OneWay}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Email" Binding="{Binding email, Mode=OneWay}"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button FontWeight="Bold" FontStyle="Italic" Background="Blue" Content="Thêm mới" HorizontalAlignment="Left" Margin="59,338,0,0" VerticalAlignment="Top" Width="104" Height="33" Click="Button_Click" RenderTransformOrigin="0.273,0.232"/>
+        <Button FontWeight="Bold" FontStyle="Italic" Background="Green" Content="Sửa" HorizontalAlignment="Left" Margin="244,338,0,0" VerticalAlignment="Top" Width="104" Height="33" Click="Button_Click_1"/>
+        <Button Content="Xóa" FontWeight="Bold" FontStyle="Italic" Background="Red" HorizontalAlignment="Left" Margin="421,338,0,0" VerticalAlignment="Top" Height="33" Width="104" Click="Button_Click_2"/>
+        <Button Content="In Excel" HorizontalAlignment="Left" Margin="603,338,0,0" VerticalAlignment="Top" Width="104" Height="33" Click="Button_Click_3"/>
+    </Grid>
+</Window>

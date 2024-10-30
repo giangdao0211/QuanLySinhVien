@@ -1,0 +1,30 @@
+﻿<Page x:Class="QuanLyDiem.DiemTheoMonHocPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:QuanLyDiem"
+      mc:Ignorable="d"
+      Title="DiemTheoMonHocPage" Width="885" Height="510" >
+
+    <Grid Margin="0,0,0,96">
+        <Button ToolTip="Quay lại" HorizontalAlignment="Left" Margin="18,4,0,0" VerticalAlignment="Top" Height="35"  Width="35" Click="Button_Click" >
+            <Button.Background>
+                <ImageBrush ImageSource="/Resources/back.png"/>
+            </Button.Background>
+        </Button>
+        <DataGrid x:Name="dtgDiem" IsReadOnly="True" AutoGenerateColumns="False" HorizontalAlignment="Left" Height="375" Margin="5,44,0,0" VerticalAlignment="Top" Width="880">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Mã SV" Binding="{Binding MaSv}"/>
+                <DataGridTextColumn Header="Tên SV" Binding="{Binding TenSv}"/>
+                <DataGridTextColumn Header="Tên học phần" Binding="{Binding TenMh}"/>
+                <DataGridTextColumn Header="Điểm TX1" Binding="{Binding DiemTx1}"/>
+                <DataGridTextColumn Header="Điểm TX2" Binding="{Binding DiemTx2}"/>
+                <DataGridTextColumn Header="Điểm thi" Binding="{Binding DiemThi}"/>
+                <DataGridTextColumn Header="Điểm TK (Số)" Binding="{Binding DiemTkso}"/>
+                <DataGridTextColumn Width="*" Header="Điểm TK (Chữ)" Binding="{Binding DiemTkchu}"/>
+
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Page>
